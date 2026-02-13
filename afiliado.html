@@ -2,171 +2,249 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Afiliado Shopee | Renda Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia Completo Afiliado Shopee</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Arial", sans-serif;
       }
       body {
+        font-family: "Inter", sans-serif;
         background: #050505;
         color: #fff;
+        overflow-x: hidden;
       }
-      .container {
-        max-width: 1100px;
-        margin: auto;
-        padding: 30px 20px;
+
+      /* FUNDO GLOW */
+      body::before {
+        content: "";
+        position: fixed;
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(circle, #ff7a0030 0%, transparent 70%);
+        top: -300px;
+        right: -300px;
+        filter: blur(150px);
+        animation: moveGlow 15s infinite alternate ease-in-out;
+        z-index: -1;
       }
-      .hero {
-        background: linear-gradient(135deg, #ff7a00, #ffb700);
-        color: #000;
-        padding: 90px 25px;
-        border-radius: 25px;
-        text-align: center;
-        box-shadow: 0 0 40px rgba(255, 170, 0, 0.4);
+      @keyframes moveGlow {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(-150px, 120px);
+        }
       }
-      .hero h1 {
-        font-size: 3.2rem;
-        margin-bottom: 20px;
+
+      /* NAV */
+      .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 30px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
-      .hero p {
-        font-size: 1.4rem;
-        margin-bottom: 30px;
-      }
-      .badge {
-        display: inline-block;
-        background: #000;
-        color: #ffb700;
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-      .btn {
-        display: inline-block;
-        background: #000;
+      .nav a {
         color: #fff;
-        padding: 20px 40px;
-        border-radius: 12px;
         text-decoration: none;
-        font-size: 1.3rem;
-        font-weight: bold;
-        transition: 0.3s;
+        font-weight: 600;
       }
-      .btn:hover {
-        transform: scale(1.05);
+      .nav .cta-mini {
+        padding: 10px 20px;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #ff7a00, #ffb700);
+        color: #000;
+        font-weight: 700;
+      }
+
+      /* CONTAINER */
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 120px 20px 40px;
       }
       section {
-        margin-top: 90px;
+        margin-top: 140px;
       }
-      h2 {
+
+      /* HERO */
+      .hero {
         text-align: center;
-        font-size: 2.4rem;
-        color: #ffb700;
-        margin-bottom: 50px;
+        padding: 140px 30px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(30px);
       }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
+      .hero h1 {
+        font-size: 3.8rem;
+        font-weight: 900;
+        line-height: 1.2;
       }
-      .card {
-        background: #111;
-        padding: 30px;
-        border-radius: 20px;
-        border: 1px solid #222;
+      .gradient-text {
+        background: linear-gradient(90deg, #ff7a00, #ffb700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      .card h3 {
-        color: #ffb700;
-        margin-bottom: 15px;
+      .hero p {
+        margin: 30px 0;
+        font-size: 1.3rem;
+        opacity: 0.85;
       }
-      .highlight {
-        background: linear-gradient(135deg, #ff7a00, #ffb700);
+
+      /* BOTÃO */
+      .btn {
+        position: relative;
+        display: inline-block;
+        padding: 22px 70px;
+        border-radius: 18px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-decoration: none;
         color: #000;
-        padding: 60px 30px;
-        border-radius: 25px;
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .highlight h2 {
-        color: #000;
-      }
-      .testimonials small {
-        opacity: 0.6;
-      }
-
-      .cta {
-  padding: 60px 20px;
-  background: #0f0f0f;
-        border: 2px solid #ffb700;
-        border-radius: 25px;
-        text-align: center;
-}
-
-.cta-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.cta-text {
-  flex: 1;
-}
-
-.cta-text p {
-  font-size: 1.3rem;
-  margin: 25px 0;
-}
-
-.cta-image {
-  flex: 1;
-  text-align: center;
-}
-
-.cta-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .cta-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-      footer {
-        text-align: center;
-        margin: 60px 0 20px;
-        font-size: 0.85rem;
-        opacity: 0.6;
-      }
-      .video-marquee {
+        background: linear-gradient(270deg, #ff7a00, #ffb700, #ff7a00);
+        background-size: 400% 400%;
+        animation: gradientMove 6s ease infinite;
+        box-shadow: 0 25px 80px rgba(255, 122, 0, 0.5);
         overflow: hidden;
-        width: 100%;
+        animation: pulseBtn 3s infinite;
+      }
+
+      @keyframes pulseBtn {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.04);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .btn:hover {
+        transform: translateY(-6px);
+      }
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        transform: skewX(-20deg);
+        animation: shine 4s infinite;
+      }
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 200%;
+        }
+      }
+
+      /* COUNTDOWN */
+      .countdown {
+        margin: 20px 0;
+        color: #ffb700;
+        font-weight: 600;
+      }
+
+      /* BONUS NETFLIX STYLE */
+      .bonus-section {
+        padding: 120px 40px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .bonus-header {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+      .bonus-header h2 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+      }
+      .bonus-header p {
+        opacity: 0.8;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .video-row {
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 40px;
+      }
+      .video-row::before,
+      .video-row::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 120px;
+        height: 100%;
+        z-index: 2;
+      }
+      .video-row::before {
+        left: 0;
+        background: linear-gradient(to right, #050505, transparent);
+      }
+      .video-row::after {
+        right: 0;
+        background: linear-gradient(to left, #050505, transparent);
       }
 
       .track {
         display: flex;
-        gap: 20px;
+        gap: 25px;
         width: max-content;
         animation: scroll 60s linear infinite;
       }
-
       .track video {
         width: 220px;
         height: 390px;
-        border-radius: 16px;
+        border-radius: 20px;
         object-fit: cover;
+        transition: 0.4s;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
       }
-
+      .track video:hover {
+        transform: scale(1.08) rotateY(10deg);
+      }
       @keyframes scroll {
         from {
           transform: translateX(0);
@@ -175,192 +253,446 @@
           transform: translateX(-50%);
         }
       }
+
+      /* GARANTIA */
+      .guarantee {
+        text-align: center;
+        margin-top: 60px;
+        opacity: 0.85;
+      }
+
+      /* POPUP SOCIAL */
+      .popup {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: #111;
+        padding: 15px 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.4s ease;
+      }
+
+      .popup.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* MOBILE BAR */
+      .mobile-bar {
+        display: none;
+      }
+
+      /* BENEFICIOS */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        border: 1px solid rgba(255, 183, 0, 0.5);
+        box-shadow: 0 20px 60px rgba(255, 122, 0, 0.2);
+      }
+
+      /* PREÇO */
+      /* PREÇO COM VIDEO LATERAL */
+      .pricing {
+        padding: 120px 40px;
+        border-radius: 30px;
+        background: rgba(255, 122, 0, 0.08);
+        border: 1px solid rgba(255, 183, 0, 0.4);
+      }
+
+      .pricing-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+      }
+
+      .product-video video {
+        width: 420px;
+        border-radius: 25px;
+        box-shadow: 0 40px 120px rgba(255, 122, 0, 0.35);
+        transition: 0.4s ease;
+      }
+
+      .product-video video:hover {
+        transform: scale(1.04);
+        box-shadow: 0 50px 150px rgba(255, 183, 0, 0.5);
+      }
+
+      .pricing-content {
+        max-width: 450px;
+        text-align: left;
+      }
+
+      .pricing-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        background: linear-gradient(90deg, #ff7a00, #ffb700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .price-old {
+        text-decoration: line-through;
+        opacity: 0.5;
+        font-size: 1.5rem;
+      }
+
+      .price-new {
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: #ffb700;
+        margin: 20px 0;
+        animation: priceGlow 2s infinite alternate;
+      }
+
+      @keyframes priceGlow {
+        from {
+          text-shadow: 0 0 10px rgba(255, 183, 0, 0.3);
+        }
+        to {
+          text-shadow: 0 0 25px rgba(255, 183, 0, 0.9);
+        }
+      }
+
+      .offer-desc {
+        margin: 20px 0;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .secure-text {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        opacity: 0.7;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reviews {
+        padding: 100px 20px;
+        text-align: center;
+        background: transparent; /* importante pra combinar */
+      }
+
+      .reviews h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 60px;
+        background: linear-gradient(90deg, #ffb700, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .reviews-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .review {
+        width: 320px;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 183, 0, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        transition: 0.4s ease;
+      }
+
+      .review:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 70px rgba(255, 183, 0, 0.2);
+      }
+
+      .review-top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
+
+      .name {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .verified {
+        color: #ffb700;
+        font-size: 0.75rem;
+      }
+
+      .stars {
+        color: #ffb700;
+        margin: 10px 0 15px;
+        letter-spacing: 3px;
+      }
+
+      .review p {
+        font-size: 0.95rem;
+        color: #ccc;
+        line-height: 1.6;
+      }
+
+      /* MOBILE AJUSTE */
+      @media (max-width: 768px) {
+        .pricing-wrapper {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .pricing-content {
+          text-align: center;
+        }
+
+        .product-video video {
+          width: 100%;
+          max-width: 320px;
+        }
+      }
     </style>
   </head>
 
   <body>
+    <div class="nav">
+      <a href="#">Guia Completo Afiliado Shopee</a>
+      <a href="https://pay.cakto.com.br/375zeib_744359" class="cta-mini"
+        >Comprar</a
+      >
+    </div>
+
     <div class="container">
-      <!-- HERO -->
       <div class="hero">
-        <div class="badge">🔥 MÉTODO SIMPLES + BRINDE EXCLUSIVO</div>
         <h1>
-          Fature Online Sendo Afiliado da Shopee Sem Aparecer e Sem Investir
+          Transforme Seu Celular em Uma
+          <span class="gradient-text">Máquina de Renda</span>
         </h1>
-        <p>Mesmo sem experiência, sem aparecer e usando apenas o celular.</p>
+        <p>Sem aparecer. Sem estoque. Sem investimento inicial.</p>
+        <div class="countdown">
+          ⏳ Oferta encerra em <span id="timer"></span>
+        </div>
         <a href="https://pay.cakto.com.br/375zeib_744359" class="btn"
-          >QUERO ACESSO AGORA</a
+          >QUERO ACESSO IMEDIATO</a
         >
       </div>
 
-      <!-- O QUE É -->
-      <section>
-        <h2>Entenda Como Funciona</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>📦 Sem Estoque</h3>
-            <p>Você vende produtos da Shopee sem precisar comprar nada.</p>
-          </div>
-          <div class="card">
-            <h3>📲 Apenas Celular</h3>
-            <p>Todo o processo pode ser feito direto do celular.</p>
-          </div>
-          <div class="card">
-            <h3>🙈 Sem Aparecer</h3>
-            <p>Vídeos prontos para postar e vender.</p>
-          </div>
-          <div class="card">
-            <h3>💸 Comissão Automática</h3>
-            <p>Você ganha comissão a cada venda feita pelo seu link.</p>
-          </div>
-          <div class="card">
-            <h3>⏱️ No Seu Tempo</h3>
-            <p>Trabalhe quando quiser, sem horários fixos ou cobranças.</p>
-          </div>
+      <section class="bonus-section">
+        <div class="bonus-header">
+          <h2>+ 2.000 Vídeos Prontos</h2>
+          <p>Poste e use seu link. Simples assim.</p>
+        </div>
 
-          <div class="card">
-            <h3>🚀 Comece do Zero</h3>
-            <p>
-              Não precisa de experiência, conhecimento técnico ou investimento
-              inicial.
-            </p>
+        <div class="video-row">
+          <div class="track">
+            <video src="videos/1.mp4" autoplay muted loop></video>
+            <video src="videos/2.mp4" autoplay muted loop></video>
+            <video src="videos/3.mp4" autoplay muted loop></video>
+            <video src="videos/4.mp4" autoplay muted loop></video>
+            <video src="videos/5.mp4" autoplay muted loop></video>
+            <video src="videos/6.mp4" autoplay muted loop></video>
+            <video src="videos/1.mp4" autoplay muted loop></video>
+            <video src="videos/2.mp4" autoplay muted loop></video>
           </div>
+        </div>
+
+        <div class="video-row">
+          <div class="track">
+            <video src="videos/7.mp4" autoplay muted loop></video>
+            <video src="videos/8.mp4" autoplay muted loop></video>
+            <video src="videos/9.mp4" autoplay muted loop></video>
+            <video src="videos/10.mp4" autoplay muted loop></video>
+            <video src="videos/7.mp4" autoplay muted loop></video>
+            <video src="videos/8.mp4" autoplay muted loop></video>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px">
+          <a href="#pricing" class="btn">VER TODOS OS VÍDEOS</a>
         </div>
       </section>
 
-      <!-- BRINDE -->
-      <section class="highlight">
-        <h2>🎁 BRINDE ESPECIAL INCLUSO</h2>
-        <p style="font-size: 1.5rem; margin-top: 20px">
-          <strong>+ DE 2.000 VÍDEOS PRONTOS</strong><br />
-          Para afiliados Shopee divulgarem e começarem mais rápido
-        </p>
-        <p style="margin-top: 20px">
-          Vídeos testados, prontos para postar em Reels, Shorts e TikTok.
-        </p>
-        <br>
-        <h3>Veja Alguns Exemplos dos Vídeos Prontos ⬇️</h2>
-      </section>
-      <div class="video-carousel">
-        <div class="videos">
-          <div class="video-marquee">
-            <div class="track">
-              <video src="videos/1.mp4" autoplay muted loop></video>
-              <video src="videos/2.mp4" autoplay muted loop></video>
-              <video src="videos/3.mp4" autoplay muted loop></video>
-              <video src="videos/4.mp4" autoplay muted loop></video>
-              <video src="videos/5.mp4" autoplay muted loop></video>
-              <video src="videos/6.mp4" autoplay muted loop></video>
-              <video src="videos/7.mp4" autoplay muted loop></video>
-              <video src="videos/8.mp4" autoplay muted loop></video>
-              <video src="videos/9.mp4" autoplay muted loop></video>
-              <video src="videos/10.mp4" autoplay muted loop></video>
+      <section class="reviews">
+        <h2>Resultados Reais</h2>
 
-              <!-- DUPLICA pra loop infinito -->
-              <video src="videos/1.mp4" autoplay muted loop></video>
-              <video src="videos/2.mp4" autoplay muted loop></video>
-              <video src="videos/3.mp4" autoplay muted loop></video>
-              <video src="videos/4.mp4" autoplay muted loop></video>
-              <video src="videos/5.mp4" autoplay muted loop></video>
-              <video src="videos/6.mp4" autoplay muted loop></video>
-              <video src="videos/7.mp4" autoplay muted loop></video>
-              <video src="videos/8.mp4" autoplay muted loop></video>
-              <video src="videos/9.mp4" autoplay muted loop></video>
-              <video src="videos/10.mp4" autoplay muted loop></video>
+        <div class="reviews-grid">
+          <div class="review">
+            <div class="review-top">
+              <span class="name">Lucas Andrade</span>
+              <span class="verified">✔ Compra Verificada</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TRANSFORMAÇÃO -->
-      <section>
-        <h2>Por Que Isso Pode Mudar Sua Vida?</h2>
-        <div class="grid">
-          <div class="card">
-            <p>✔ Renda extra real, sem depender de patrão</p>
-            <p>✔ Comece do zero, sem custo para iniciar</p>
-            <p>✔ Um dos maiores mercados digitais do Brasil</p>
-            <p>✔ Sistema que funciona todos os dias</p>
-          </div>
-          <div class="card">
+            <div class="stars">★★★★★</div>
             <p>
-              Cada vez mais pessoas estão utilizando o programa de Afiliados da
-              Shopee para gerar renda online de forma prática e acessível, mesmo
-              começando do zero. O modelo funciona através da divulgação de
-              produtos já existentes na plataforma, onde você ganha comissões
-              por venda, sem precisar criar estoque, lidar com entregas ou
-              atender clientes.
+              Conteúdo direto, estratégico e extremamente aplicável. Já
+              recuperei o valor investido na primeira semana.
+            </p>
+          </div>
+
+          <div class="review">
+            <div class="review-top">
+              <span class="name">Mariana Costa</span>
+              <span class="verified">✔ Compra Verificada</span>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p>
+              O brinde dos vídeos é absurdo. Muito acima do que eu esperava.
+              Estrutura profissional.
+            </p>
+          </div>
+
+          <div class="review">
+            <div class="review-top">
+              <span class="name">Rafael Lima</span>
+              <span class="verified">✔ Compra Verificada</span>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p>
+              Simplesmente o melhor custo-benefício que já encontrei. Vale muito
+              mais que o valor cobrado.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- PROVA SOCIAL MODELO -->
-      <section>
-        <h2>Resultados Relatados</h2>
-        <div class="grid testimonials">
-          <div class="card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              “Nunca imaginei ganhar dinheiro online. O conteúdo é direto e
-              fácil.”
+      <section id="pricing" class="pricing">
+        <div class="pricing-wrapper">
+          <div class="product-video">
+            <video autoplay muted loop playsinline>
+              <source src="videos/video-capa.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="pricing-content">
+            <h2>🔥 Últimas Vagas Com 86% OFF</h2>
+
+            <div class="price-old">De R$ 197,00</div>
+            <div class="price-new">R$ 27,99</div>
+
+            <p class="offer-desc">
+              Acesso imediato + <strong>+2.000 vídeos prontos incluídos</strong>
             </p>
-            <small>Suellem Silva - Aluna do método</small>
-          </div>
-          <div class="card">
-            ⭐⭐⭐⭐⭐
-            <p>“Os vídeos prontos ajudam demais. Economiza muito tempo.”</p>
-            <small>Ana Beatriz - Aluna do método</small>
-          </div>
-          <div class="card">
-            ⭐⭐⭐⭐⭐
-            <p>“Ideal pra quem quer começar sem aparecer.”</p>
-            <small>Carlos Queiroz - Aluno do método</small>
+
+            <div class="countdown">
+              ⚠️ Oferta pode encerrar a qualquer momento
+            </div>
+
+            <a href="https://pay.cakto.com.br/375zeib_744359" class="btn">
+              GARANTIR MINHA VAGA 🔥
+            </a>
+
+            <div class="secure-text">🔒 Compra 100% segura</div>
           </div>
         </div>
       </section>
 
-      <!-- CTA FINAL -->
-<section class="cta">
-  <div class="cta-content">
-    <div class="cta-text">
-      <h2>Comece Hoje Mesmo</h2>
-      <p>
-        Acesse agora e receba
-        <strong>
-          seu brinde exclusivo com mais de 2.000 vídeos prontos para postar,
-        </strong>
-        junto com acesso imediato ao conteúdo.
-      </p>
+      <div class="guarantee">🛡️ Garantia incondicional de 7 dias.</div>
 
-      <a href="https://pay.cakto.com.br/375zeib_744359" class="btn">
-        GARANTIR MEU ACESSO AGORA 🔥
-      </a>
-    </div>
-
-    <div class="cta-image">
-      <img src="videos/foto.png" alt="Imagem do Produto" />
-    </div>
-  </div>
-</section>
-
-
-      <footer>
-        <p>Este site não possui vínculo oficial com a Shopee.</p>
+      <footer style="text-align: center; margin: 100px 0 40px; opacity: 0.5">
+        Este site não possui vínculo oficial com a Shopee.
       </footer>
     </div>
+
+    <div class="mobile-bar">
+      <a href="https://pay.cakto.com.br/375zeib_744359" class="btn"
+        >Comprar Agora</a
+      >
+    </div>
+
+    <div class="popup" id="popup"></div>
+
     <script>
-      let index = 0;
-      const videos = document.querySelector(".videos");
-      const total = videos.children.length;
+      let time = 1800;
+      setInterval(() => {
+        let m = Math.floor(time / 60);
+        let s = time % 60;
+        document.getElementById("timer").innerText =
+          `${m}:${s < 10 ? "0" : ""}${s}`;
+        if (time > 0) time--;
+      }, 1000);
 
-      document.querySelector(".next").onclick = () => {
-        index = (index + 1) % total;
-        videos.style.transform = `translateX(-${index * 320}px)`;
-      };
+      const names = [
+        "Carlos",
+        "Mariana",
+        "Rafael",
+        "Juliana",
+        "Bruno",
+        "Camila",
+        "Lucas",
+        "Fernanda",
+        "Gustavo",
+        "Larissa",
+        "Felipe",
+        "Amanda",
+        "Thiago",
+        "Beatriz",
+        "André",
+        "Patrícia",
+        "Eduardo",
+        "Isabela",
+        "Rodrigo",
+        "Natália",
+      ];
 
-      document.querySelector(".prev").onclick = () => {
-        index = (index - 1 + total) % total;
-        videos.style.transform = `translateX(-${index * 320}px)`;
+      const popup = document.getElementById("popup");
+
+      function showPopup() {
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        popup.innerHTML = `🔥 ${randomName} acabou de comprar!`;
+        popup.classList.add("show");
+
+        setTimeout(() => {
+          popup.classList.remove("show");
+        }, 4000);
+      }
+
+      setInterval(showPopup, 8000);
+
+      const reveals = document.querySelectorAll(".pricing, .bonus-section");
+
+      window.addEventListener("scroll", () => {
+        reveals.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault(),
+      );
+
+      document.onkeydown = function (e) {
+        if (e.keyCode == 123) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0))
+          return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0))
+          return false;
+        if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) return false;
       };
     </script>
   </body>
